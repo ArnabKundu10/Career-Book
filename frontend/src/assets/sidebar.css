@@ -1,0 +1,17 @@
+.dream-list{
+   display: flex;
+   flex-direction: column;
+   border-right: 1px solid rgb(31, 182, 242);
+   width: 18%;
+   position: fixed;
+   top: 10%;
+}
+.list-item{
+   padding: 3%;
+   border-bottom: 1px solid rgb(31, 182, 242);
+   cursor: pointer;
+}
+.list-item:hover{
+   color: white;
+   background-color: rgb(31, 182, 242);
+}

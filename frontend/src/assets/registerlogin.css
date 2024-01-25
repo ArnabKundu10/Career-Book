@@ -1,0 +1,32 @@
+.register-login{
+   position: relative;
+   height: 110vh;
+   background:linear-gradient(to right top,rgb(31, 182, 242,0.5),rgb(31, 182, 242,0.5),rgb(31, 182, 242,0.5),white,rgb(31, 182, 242,0.5),rgb(31, 182, 242,0.5),rgb(31, 182, 242,0.5));
+   /*  */
+   
+}
+.register{
+   z-index: 3;
+   box-shadow: 5px 5px 5px;
+   background:linear-gradient(to right top,rgb(31, 182, 242,0.4),white,rgb(31, 182, 242,0.4));
+}
+.overlay{
+   position: relative;
+   z-index: 2;
+   
+}
+.notebook-bg{
+   margin-top: 10%;
+   width: 100%;
+   /* margin-left: -20%; */
+   
+   opacity: 0.5;
+}
+/* .note-bg{
+   background-image: url(../pictures/notebook-bg.jpg);
+   background-position: center center;
+   background-repeat: none;
+   background-size: cover;
+   opacity: 0.4;
+   height: 100vh;
+} */

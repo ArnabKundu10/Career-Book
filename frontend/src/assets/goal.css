@@ -1,0 +1,11 @@
+.goal-input{
+   text-align: center;
+   width: 70%;
+}
+.goal-btn{
+   background:linear-gradient(to left top,white, rgb(31, 182, 242,0.7),white) ;
+   color: white;
+}
+.goal-btn:hover{
+   background:linear-gradient(to left top, rgb(31, 182, 242,0.7),white, rgb(31, 182, 242,0.7)) ;   
+}
