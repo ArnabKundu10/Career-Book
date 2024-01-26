@@ -27,16 +27,16 @@ const dreamLogin = new mongoose.Schema({
   confirmpassword: {
     type: String,
   },
-  // goalTasks: [
-  //   {
-  //     title: {
-  //       type: String,
-  //     },
-  //     description: {
-  //       type: String,
-  //     },
-  //   },
-  // ],
+  goaltasks: [
+    {
+      title: {
+        type: String,
+      },
+      description: {
+        type: String,
+      },
+    },
+  ],
 });
 dreamLogin.methods.generateAuthToken = async function () {
   try {

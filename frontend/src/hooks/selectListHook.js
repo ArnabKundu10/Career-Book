@@ -11,7 +11,6 @@ const SelectListHook = () => {
     email: "",
     confirmpassword: "",
   });
-  const [token, setToken] = useState(localStorage.getItem("token"));
   return {
     setListNum,
     listnum,
@@ -19,8 +18,6 @@ const SelectListHook = () => {
     registerdata,
     logindata,
     setLogin,
-    token,
-    setToken,
   };
 };
 export { SelectListHook };

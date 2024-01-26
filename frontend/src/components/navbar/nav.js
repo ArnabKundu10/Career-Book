@@ -9,7 +9,8 @@ export default function NavBar({ token, setToken }) {
     try {
       setToken("");
       localStorage.removeItem("token");
-      navigate("/registrationlogin");
+      localStorage.removeItem("useridls");
+      navigate("/");
       e.target.style.display = "none";
     } catch (error) {
       console.log(error);

@@ -4,10 +4,9 @@ import NoteBookBg from "../pictures/notebook-bg.jpg";
 import { useNavigate } from "react-router-dom";
 import { SelectListHook } from "../hooks/selectListHook";
 import NavBar from "../components/navbar/nav";
-export default function RegisterLogin() {
+export default function RegisterLogin({ forSetToken, forSetUserid }) {
   const navigate = useNavigate();
-  const { setRegister, registerdata, setToken, logindata, setLogin } =
-    SelectListHook();
+  const { setRegister, registerdata, logindata, setLogin } = SelectListHook();
   const inputChangeOne = async (e) => {
     try {
       const name = e.target.name;
@@ -28,7 +27,6 @@ export default function RegisterLogin() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          // Additional headers if needed
         },
         body: JSON.stringify(registerdata),
       });
@@ -36,15 +34,13 @@ export default function RegisterLogin() {
       if (response.ok) {
         const responseData = await response.json();
         console.log(responseData.token);
-        localStorage.setItem("token", responseData.token);
-        setToken(localStorage.getItem("token"));
+        localStorage.setItem("useridls", responseData.userId);
         setRegister({
           fullname: "",
           email: "",
           password: "",
           confirmpassword: "",
         });
-        navigate("/");
       } else {
         console.log("there is an error in register page");
       }
@@ -82,7 +78,11 @@ export default function RegisterLogin() {
         const responseData = await response.json();
         console.log(responseData.token);
         localStorage.setItem("token", responseData.token);
-        setToken(localStorage.getItem("token"));
+        localStorage.setItem("useridls", responseData.userId);
+        // setUserid(responseData.userId);
+        forSetToken(localStorage.getItem("token"));
+        forSetUserid(responseData.userId);
+        console.log(`userid= ${responseData.userId}`);
         setLogin({
           email: "",
           password: "",

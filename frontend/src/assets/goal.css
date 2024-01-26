@@ -1,6 +1,10 @@
 .goal-input{
    text-align: center;
    width: 70%;
+   top: 100px;
+   background-color: skyblue;
+   z-index: 3;
+   padding: 1.5%;
 }
 .goal-btn{
    background:linear-gradient(to left top,white, rgb(31, 182, 242,0.7),white) ;
