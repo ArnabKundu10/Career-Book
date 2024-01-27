@@ -13,5 +13,5 @@
 }
 .list-item:hover{
    color: white;
-   background-color: rgb(31, 182, 242);
+   background-color: rgb(31, 182, 242) !important;
 }

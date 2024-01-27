@@ -7,6 +7,7 @@ import NavBar from "../components/navbar/nav";
 export default function RegisterLogin({ forSetToken, forSetUserid }) {
   const navigate = useNavigate();
   const { setRegister, registerdata, logindata, setLogin } = SelectListHook();
+  // register****************************************************
   const inputChangeOne = async (e) => {
     try {
       const name = e.target.name;
@@ -100,7 +101,7 @@ export default function RegisterLogin({ forSetToken, forSetUserid }) {
       <NavBar />
       <div className="register-login d-flex flex-row justify-content-around align-items-center">
         <div className="note-bg position-absolute">
-          <img className="notebook-bg w-100%" src={NoteBookBg} alt="" />
+          <img className="notebook-bg-img w-100%" src={NoteBookBg} alt="" />
         </div>
         <div className="register w-25 border border-3 border-opacity-50 border-primary p-5">
           <p className="text-center fw-bolder fw-2">Registration</p>

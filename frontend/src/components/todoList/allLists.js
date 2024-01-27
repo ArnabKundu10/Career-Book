@@ -1,5 +1,5 @@
 import React from "react";
-import Goal from "./multipleToDoList/goal.js";
+import Goal from "./multipleToDoList/goal/goal.js";
 import Other from "./multipleToDoList/other.js";
 import Project from "./multipleToDoList/project.js";
 import Skill from "./multipleToDoList/skill.js";

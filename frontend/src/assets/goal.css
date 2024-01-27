@@ -1,9 +1,12 @@
 .goal-input{
    text-align: center;
-   width: 70%;
-   top: 100px;
-   background-color: skyblue;
+   width: 74%;
+   top: 68px;
    z-index: 3;
+   
+}
+.goal-form{
+   background-color: skyblue;
    padding: 1.5%;
 }
 .goal-btn{
@@ -12,4 +15,35 @@
 }
 .goal-btn:hover{
    background:linear-gradient(to left top, rgb(31, 182, 242,0.7),white, rgb(31, 182, 242,0.7)) ;   
+}
+.complete-status{
+   background-color: rgba(136, 133, 133, 1);
+   border: 1px solid white;
+  border-bottom: none ;
+  border-left: none;
+  cursor: pointer;
+}
+.todo-status{
+  background-color: rgb(31, 182, 242,1); 
+  border: 1px solid white;
+  border-bottom: none ;
+  border-right: none;
+  cursor: pointer;
+}
+.todo-status:hover,.complete-status:hover{
+   background-color: rgb(31, 182, 242,1) !important; 
+   color: white;
+}
+.goal-title{
+   background-color:rgb(31, 182, 242,1) ;
+   width: 35%;
+   text-align:start;
+
+}
+.goal-description{
+   background:linear-gradient(to right,white,rgb(31, 182, 242,0.2),white,rgb(31, 182, 242,0.2));
+  border: 10px solid rgb(31, 182, 242,1);
+  /* margin: -0.5%; */
+  margin-top: -0.4%;
+  text-align: justify;
 }

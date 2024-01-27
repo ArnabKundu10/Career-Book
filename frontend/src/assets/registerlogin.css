@@ -1,7 +1,7 @@
 .register-login{
    position: relative;
    height: 110vh;
-   background:linear-gradient(to right top,rgb(31, 182, 242,0.5),rgb(31, 182, 242,0.5),rgb(31, 182, 242,0.5),white,rgb(31, 182, 242,0.5),rgb(31, 182, 242,0.5),rgb(31, 182, 242,0.5));
+   background:linear-gradient(to right top,rgb(31, 182, 242,1),rgb(31, 182, 242,1),rgb(31, 182, 242,1),white,rgb(31, 182, 242,1),rgb(31, 182, 242,1),rgb(31, 182, 242,1));
    /*  */
    
 }
@@ -15,18 +15,14 @@
    z-index: 2;
    
 }
-.notebook-bg{
-   margin-top: 10%;
-   width: 100%;
-   /* margin-left: -20%; */
+.notebook-bg-img{
+   height: 110vh;
+   width: 110%;
+    margin-left: -5%; 
    
    opacity: 0.5;
 }
-/* .note-bg{
-   background-image: url(../pictures/notebook-bg.jpg);
-   background-position: center center;
-   background-repeat: none;
-   background-size: cover;
-   opacity: 0.4;
-   height: 100vh;
-} */
+.note-bg{
+   top: 0;
+   bottom: 0;
+} 
