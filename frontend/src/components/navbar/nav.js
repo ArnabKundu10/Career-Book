@@ -1,5 +1,6 @@
 import React from "react";
 import "../../assets/navBar.css";
+import DiaryLogo from "../../pictures/diary-logo.png";
 import { useNavigate } from "react-router-dom";
 
 export default function NavBar({ token, setToken }) {
@@ -21,7 +22,10 @@ export default function NavBar({ token, setToken }) {
       <nav className="customNav w-100 position-fixed text-center">
         <div className=" container d-flex pt-1 pb-2">
           <p className="flex-grow-1 text-center text-white fw-bolder fs-1 mb-0">
-            DreamBook
+            <span>
+              <img className="diary-logo" src={DiaryLogo} alt="" />
+            </span>
+            DreamDiary
           </p>
           <p className=" align-self-center fs-5 mb-0">
             {!token ? (

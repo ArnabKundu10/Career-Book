@@ -6,3 +6,11 @@
 .register-box:hover{
 color: white !important;
 }
+.diary-logo{
+   width: 3.3%;
+   z-index: -1;
+   position: relative;
+   margin-top: -5px;
+   margin-right: -1.1%;
+   transform: rotate(-30deg);
+}

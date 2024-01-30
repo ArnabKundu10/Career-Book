@@ -19,7 +19,7 @@ function MainBody() {
   return (
     <>
       <NavBar token={token} setToken={setToken} />
-      {!token ? (
+      {!token || token === undefined ? (
         <RegisterLogin forSetToken={forSetToken} forSetUserid={forSetUserid} />
       ) : (
         <div>

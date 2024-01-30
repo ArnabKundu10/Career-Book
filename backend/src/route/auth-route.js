@@ -5,4 +5,8 @@ route.get("/", authcontroller.home);
 route.post("/register", authcontroller.register);
 route.post("/login", authcontroller.login);
 route.get("/goaldata/:id", authcontroller.goaldata);
+route.post("/todo", authcontroller.todo);
+route.post("/incomplete", authcontroller.incomplete);
+route.post("/complete", authcontroller.complete);
+route.post("/deletetask", authcontroller.deletetask);
 module.exports = route;

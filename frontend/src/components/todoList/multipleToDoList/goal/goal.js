@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from "react";
 import "../../../../assets/goal.css";
 import ToDo from "./todo";
+import EditPop1 from "./edit-pop1";
+import EditPop2 from "./edit-pop2";
 import Completed from "./completed";
+import { SelectListHook } from "../../../../hooks/selectListHook";
 export default function Goal({ userid }) {
-  const [statusBg, setStatusBg] = useState(0);
-  const [goaldata, setGoalData] = useState([]);
-  const [status, setStatus] = useState(true);
+  const { statusBg, setStatusBg, goaldata, setGoalData, status, setStatus } =
+    SelectListHook();
   const [taskdata, setTaskData] = useState({
     title: "",
     description: "",
     id: userid,
   });
   const hoverStatus = (id) => {
-    if (statusBg === id) {
+    if (statusBg === id && id === 0) {
       return { backgroundColor: "rgb(31, 182, 242,1)" };
+    } else if (statusBg === id && id === 1) {
+      return { backgroundColor: "rgb(31, 242, 136)" };
     }
     return { backgroundColor: "rgba(136, 133, 133, 1)" };
   };
@@ -35,7 +39,7 @@ export default function Goal({ userid }) {
       }
     };
     fetchData();
-  }, [userid, taskdata]);
+  }, [userid, taskdata, setGoalData]);
   // add task*************************************************
 
   const inputChange = async (e) => {
@@ -65,7 +69,9 @@ export default function Goal({ userid }) {
         const responseData = await response.json();
         setGoalData(responseData.goaltasks);
         setTaskData({ title: "", description: "", id: userid });
+        alert("Your task is successfully added in the to-do list");
       } else {
+        alert("Title should not be empty");
         console.log("there is an error in response");
       }
     } catch (error) {
@@ -85,7 +91,7 @@ export default function Goal({ userid }) {
               type="text"
               name="title"
               onChange={inputChange}
-              value={setTaskData.title}
+              value={taskdata.title}
               className="form-control"
               id="exampleFormControlInput1"
               placeholder="Title Name"
@@ -99,7 +105,7 @@ export default function Goal({ userid }) {
               className="form-control"
               id="exampleFormControlTextarea1"
               name="description"
-              value={setTaskData.description}
+              value={taskdata.description}
               onChange={inputChange}
               placeholder="Describe Task"
               rows={3}
@@ -137,24 +143,42 @@ export default function Goal({ userid }) {
       </div>
       {status ? (
         <div className="todo-tasks mt-0 me-0">
+          <EditPop1 />
           {goaldata?.map((dataItem, index) => {
             if (dataItem.status === "incomplete") {
-              return <ToDo key={index} dataItem={dataItem} />;
+              return (
+                <ToDo
+                  key={index}
+                  index={index}
+                  userid={userid}
+                  setGoalData={setGoalData}
+                  dataItem={dataItem}
+                />
+              );
             }
-            return <li key={index}>{dataItem.status}</li>;
+            return (
+              <li key={index} style={{ listStyle: "none" }}>
+                {" "}
+              </li>
+            );
           })}
         </div>
       ) : (
         <div className="complete-tasks mt-0 me-0">
+          <EditPop2 />
           {goaldata?.map((dataItem, index) => {
             if (dataItem.status === "complete") {
-              return <Completed key={index} dataItem={dataItem} />;
+              return (
+                <Completed
+                  key={index}
+                  index={index}
+                  userid={userid}
+                  setGoalData={setGoalData}
+                  dataItem={dataItem}
+                />
+              );
             }
-            return (
-              <li key={index} style={{ height: "0px" }}>
-                {dataItem.status}
-              </li>
-            );
+            return <li key={index} style={{ listStyle: "none" }}></li>;
           })}
         </div>
       )}

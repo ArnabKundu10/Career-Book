@@ -11,6 +11,10 @@ const SelectListHook = () => {
     email: "",
     confirmpassword: "",
   });
+  const [statusBg, setStatusBg] = useState(0);
+  const [goaldata, setGoalData] = useState([]);
+  const [status, setStatus] = useState(true);
+
   return {
     setListNum,
     listnum,
@@ -18,6 +22,12 @@ const SelectListHook = () => {
     registerdata,
     logindata,
     setLogin,
+    statusBg,
+    setStatusBg,
+    goaldata,
+    setGoalData,
+    status,
+    setStatus,
   };
 };
 export { SelectListHook };

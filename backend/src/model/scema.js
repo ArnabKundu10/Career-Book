@@ -10,11 +10,13 @@ const dreamLogin = new mongoose.Schema({
   fullname: {
     type: String,
     uppercase: true,
+    required: true,
   },
   email: {
     type: String,
     lowercase: true,
-    // unique: true,
+    required: true,
+    unique: [true, "its not unique"],
     validate(val) {
       if (!isEmail(val)) {
         throw new Error("incorrect email");
@@ -23,17 +25,25 @@ const dreamLogin = new mongoose.Schema({
   },
   password: {
     type: String,
+    required: true,
   },
   confirmpassword: {
     type: String,
+    required: true,
   },
   goaltasks: [
     {
+      status: {
+        type: String,
+      },
       title: {
         type: String,
+
+        uppercase: true,
       },
       description: {
         type: String,
+        lowercase: true,
       },
     },
   ],

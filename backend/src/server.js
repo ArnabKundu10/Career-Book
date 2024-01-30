@@ -3,7 +3,6 @@ const app = express();
 const cors = require("cors");
 const connectDB = require("./connection/cnct");
 const mainRouter = require("./route/auth-route");
-const DreamCollection = require("./model/scema");
 connectDB();
 const PORT = process.env.PORT || 5500;
 const corsOptions = {

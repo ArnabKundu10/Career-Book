@@ -8,6 +8,7 @@
 .goal-form{
    background-color: skyblue;
    padding: 1.5%;
+   
 }
 .goal-btn{
    background:linear-gradient(to left top,white, rgb(31, 182, 242,0.7),white) ;
@@ -30,20 +31,43 @@
   border-right: none;
   cursor: pointer;
 }
-.todo-status:hover,.complete-status:hover{
+.todo-status:hover{
    background-color: rgb(31, 182, 242,1) !important; 
    color: white;
 }
-.goal-title{
+.complete-status:hover{
+   background-color:rgb(31, 242, 136) !important;
+   color: white;
+}
+.goal-todo-title{
    background-color:rgb(31, 182, 242,1) ;
    width: 35%;
    text-align:start;
-
 }
-.goal-description{
+.goal-todo-description{
    background:linear-gradient(to right,white,rgb(31, 182, 242,0.2),white,rgb(31, 182, 242,0.2));
   border: 10px solid rgb(31, 182, 242,1);
-  /* margin: -0.5%; */
   margin-top: -0.4%;
   text-align: justify;
+}
+.goal-complete-description{
+   background:linear-gradient(to right,white,rgb(31, 182, 242,0.2),white,rgb(31, 182, 242,0.2));
+   border: 10px solid rgb(31, 242, 136);
+   margin-top: -0.4%;
+   text-align: justify;
+}
+.goal-complete-title{
+   background-color:rgb(31, 242, 136) ;
+   width: 35%;
+   text-align:start;
+}
+.todo-buttons{
+   width: 64.8%;
+}
+  .todo-button{
+  height: 55px;
+  margin-left: 2%;
+}
+.todo-tasks{
+   position: relative;
 }

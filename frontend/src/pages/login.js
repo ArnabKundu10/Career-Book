@@ -31,7 +31,7 @@ export default function RegisterLogin({ forSetToken, forSetUserid }) {
         },
         body: JSON.stringify(registerdata),
       });
-      console.log("response data : ", response);
+      // console.log("response data : ", response);
       if (response.ok) {
         const responseData = await response.json();
         console.log(responseData.token);
@@ -43,6 +43,7 @@ export default function RegisterLogin({ forSetToken, forSetUserid }) {
           confirmpassword: "",
         });
       } else {
+        alert("Identical email is not allowed or No desired input");
         console.log("there is an error in register page");
       }
     } catch (error) {
@@ -74,7 +75,7 @@ export default function RegisterLogin({ forSetToken, forSetUserid }) {
         },
         body: JSON.stringify(logindata),
       });
-      console.log("response data : ", response);
+      // console.log("response data : ", response);
       if (response.ok) {
         const responseData = await response.json();
         console.log(responseData.token);
@@ -90,6 +91,7 @@ export default function RegisterLogin({ forSetToken, forSetUserid }) {
         });
         navigate("/");
       } else {
+        alert("login credentials are wrong");
         console.log("there is an error in register page");
       }
     } catch (error) {
