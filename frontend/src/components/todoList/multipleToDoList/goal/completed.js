@@ -1,6 +1,13 @@
 import React from "react";
-
-export default function Completed({ dataItem, index, userid, setGoalData }) {
+import EditPop1 from "./edit-pop";
+export default function Completed({
+  dataItem,
+  index,
+  userid,
+  setGoalData,
+  editdisplay,
+  setEditDisplay,
+}) {
   const complete = async (e) => {
     e.preventDefault();
     try {
@@ -47,24 +54,39 @@ export default function Completed({ dataItem, index, userid, setGoalData }) {
     alert("Your task is deleted from all lists");
   };
   return (
-    <div className="d-flex flex-column mt-2 me-0">
-      <div className="d-flex flex-row">
-        <div className="goal-complete-title rounded p-2 text-white fw-bolder fs-2">
-          {dataItem.title}
+    <>
+      <EditPop1
+        index={index}
+        userid={userid}
+        setGoalData={setGoalData}
+        dataItem={dataItem}
+        editdisplay={editdisplay}
+        setEditDisplay={setEditDisplay}
+      />
+      <div className="d-flex flex-column mt-2 me-0">
+        <div className="d-flex flex-row">
+          <div className="goal-complete-title rounded p-2 text-white fw-bolder fs-2">
+            {dataItem.title}
+          </div>
+          <div className="todo-buttons d-flex justify-content-end align-items-end">
+            <button
+              className="btn todo-button btn-primary"
+              onClick={() => setEditDisplay(index)}
+            >
+              Edit
+            </button>
+            <button className="btn todo-button btn-danger" onClick={deleteBtn}>
+              Delete
+            </button>
+            <button className="btn todo-button btn-success" onClick={complete}>
+              Yet to Complete
+            </button>
+          </div>
         </div>
-        <div className="todo-buttons d-flex justify-content-end align-items-end">
-          <button className="btn todo-button btn-primary">Edit</button>
-          <button className="btn todo-button btn-danger" onClick={deleteBtn}>
-            Delete
-          </button>
-          <button className="btn todo-button btn-success" onClick={complete}>
-            Yet to Complete
-          </button>
+        <div className="goal-complete-description p-1 text-black w-100">
+          {dataItem.description}
         </div>
       </div>
-      <div className="goal-complete-description p-1 text-black w-100">
-        {dataItem.description}
-      </div>
-    </div>
+    </>
   );
 }

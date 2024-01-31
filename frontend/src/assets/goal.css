@@ -71,3 +71,10 @@
 .todo-tasks{
    position: relative;
 }
+.edit-pop1{
+   position: absolute;
+   background:linear-gradient(to right,rgb(3, 92, 234),rgb(31, 182, 242,1),rgb(3, 92, 234));
+   width: 85%;
+   left: 8%;
+   box-shadow: 10px 10px 10px;
+}

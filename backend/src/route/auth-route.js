@@ -9,4 +9,5 @@ route.post("/todo", authcontroller.todo);
 route.post("/incomplete", authcontroller.incomplete);
 route.post("/complete", authcontroller.complete);
 route.post("/deletetask", authcontroller.deletetask);
+route.post("/todoedit", authcontroller.todoedit);
 module.exports = route;

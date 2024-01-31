@@ -56,7 +56,7 @@ const register = async (req, res) => {
         {
           status: "incomplete",
           title: `${req.body.fullname} The Warrior`,
-          description: "this is just prechecking before implementing it",
+          description: "this is Demo Element",
         },
         {
           status: "complete",
@@ -85,8 +85,8 @@ const register = async (req, res) => {
       res.status(400).send("passwords are not matched");
     }
   } catch (error) {
-    console.log(error);
-    res.send(error);
+    console.log("i am error");
+    res.status(404).send(error);
   }
 };
 const goaldata = async (req, res) => {
@@ -169,6 +169,28 @@ const deletetask = async (req, res) => {
     res.status(404).send(error);
   }
 };
+const todoedit = async (req, res) => {
+  try {
+    const _id = req.body.id;
+    const index = req.body.i;
+    const singleTitle = req.body.title;
+    const findTaskData = await DreamCollection.findById({ _id });
+    if (singleTitle !== "") {
+      findTaskData.goaltasks[index] = {
+        title: req.body.title,
+        description: req.body.description,
+        status: req.body.status,
+      };
+      await findTaskData.save();
+      res.send(findTaskData);
+    } else {
+      res.status(500).send("title should not be empty");
+    }
+  } catch (error) {
+    res.status(404).send(error);
+  }
+};
+
 module.exports = {
   home,
   login,
@@ -178,4 +200,5 @@ module.exports = {
   incomplete,
   complete,
   deletetask,
+  todoedit,
 };

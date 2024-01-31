@@ -1,6 +1,14 @@
 import React from "react";
+import EditPop1 from "./edit-pop";
 
-export default function ToDo({ dataItem, index, userid, setGoalData }) {
+export default function ToDo({
+  dataItem,
+  index,
+  userid,
+  setGoalData,
+  setEditDisplay,
+  editdisplay,
+}) {
   const incompleteBtn = async (e) => {
     e.preventDefault();
     try {
@@ -46,28 +54,44 @@ export default function ToDo({ dataItem, index, userid, setGoalData }) {
     }
     alert("Your task is deleted from all lists");
   };
+  // const [editdisplay, setEditDisplay] = useState({ display: "none" });
   return (
-    <div className="d-flex flex-column mt-4 me-0">
-      <div className="d-flex flex-row">
-        <div className="goal-todo-title rounded p-2 text-white fw-bolder fs-2">
-          {dataItem.title}
+    <>
+      <EditPop1
+        index={index}
+        userid={userid}
+        setGoalData={setGoalData}
+        dataItem={dataItem}
+        editdisplay={editdisplay}
+        setEditDisplay={setEditDisplay}
+      />
+      <div className="d-flex flex-column mt-4 me-0">
+        <div className="d-flex flex-row">
+          <div className="goal-todo-title rounded p-2 text-white fw-bolder fs-2">
+            {dataItem.title}
+          </div>
+          <div className="todo-buttons d-flex justify-content-end align-items-end">
+            <button
+              className="btn todo-button btn-primary"
+              onClick={() => setEditDisplay(index)}
+            >
+              Edit
+            </button>
+            <button className="btn todo-button btn-danger" onClick={deleteBtn}>
+              Delete
+            </button>
+            <button
+              className="btn todo-button btn-success"
+              onClick={incompleteBtn}
+            >
+              Task Completed
+            </button>
+          </div>
         </div>
-        <div className="todo-buttons d-flex justify-content-end align-items-end">
-          <button className="btn todo-button btn-primary">Edit</button>
-          <button className="btn todo-button btn-danger" onClick={deleteBtn}>
-            Delete
-          </button>
-          <button
-            className="btn todo-button btn-success"
-            onClick={incompleteBtn}
-          >
-            Task Completed
-          </button>
+        <div className="goal-todo-description p-1 text-black w-100">
+          {dataItem.description}
         </div>
       </div>
-      <div className="goal-todo-description p-1 text-black w-100">
-        {dataItem.description}
-      </div>
-    </div>
+    </>
   );
 }

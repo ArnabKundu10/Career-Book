@@ -31,22 +31,30 @@ export default function RegisterLogin({ forSetToken, forSetUserid }) {
         },
         body: JSON.stringify(registerdata),
       });
-      // console.log("response data : ", response);
+      console.log("response data : ", response);
       if (response.ok) {
-        const responseData = await response.json();
-        console.log(responseData.token);
-        localStorage.setItem("useridls", responseData.userId);
-        setRegister({
-          fullname: "",
-          email: "",
-          password: "",
-          confirmpassword: "",
-        });
+        if (response.status === 201) {
+          const responseData = await response.json();
+          console.log(responseData.token);
+          localStorage.setItem("useridls", responseData.userId);
+          setRegister({
+            fullname: "",
+            email: "",
+            password: "",
+            confirmpassword: "",
+          });
+          alert(
+            "your account has been created! please login to visit home page"
+          );
+        } else {
+          alert("identical email is not allowed!");
+        }
       } else {
-        alert("Identical email is not allowed or No desired input");
+        alert("passwords are not matched");
         console.log("there is an error in register page");
       }
     } catch (error) {
+      alert("there is an error");
       console.error(error);
     }
   };

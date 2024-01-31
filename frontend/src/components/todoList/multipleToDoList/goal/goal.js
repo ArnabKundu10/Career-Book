@@ -1,18 +1,27 @@
 import React, { useEffect, useState } from "react";
 import "../../../../assets/goal.css";
 import ToDo from "./todo";
-import EditPop1 from "./edit-pop1";
-import EditPop2 from "./edit-pop2";
+// import EditPop1 from "./edit-pop1";
+// import EditPop2 from "./edit-pop2";
 import Completed from "./completed";
 import { SelectListHook } from "../../../../hooks/selectListHook";
 export default function Goal({ userid }) {
-  const { statusBg, setStatusBg, goaldata, setGoalData, status, setStatus } =
-    SelectListHook();
+  const {
+    statusBg,
+    setStatusBg,
+    goaldata,
+    setGoalData,
+    status,
+    setStatus,
+    editdisplay,
+    setEditDisplay,
+  } = SelectListHook();
   const [taskdata, setTaskData] = useState({
     title: "",
     description: "",
     id: userid,
   });
+  // const [editdisplay, setEditDisplay] = useState(-1);
   const hoverStatus = (id) => {
     if (statusBg === id && id === 0) {
       return { backgroundColor: "rgb(31, 182, 242,1)" };
@@ -142,8 +151,7 @@ export default function Goal({ userid }) {
         </div>
       </div>
       {status ? (
-        <div className="todo-tasks mt-0 me-0">
-          <EditPop1 />
+        <div className="todo-tasks pt-2 mt-0 me-0">
           {goaldata?.map((dataItem, index) => {
             if (dataItem.status === "incomplete") {
               return (
@@ -153,6 +161,8 @@ export default function Goal({ userid }) {
                   userid={userid}
                   setGoalData={setGoalData}
                   dataItem={dataItem}
+                  editdisplay={editdisplay}
+                  setEditDisplay={setEditDisplay}
                 />
               );
             }
@@ -164,8 +174,8 @@ export default function Goal({ userid }) {
           })}
         </div>
       ) : (
-        <div className="complete-tasks mt-0 me-0">
-          <EditPop2 />
+        <div className="complete-tasks pt-4 mt-0 me-0">
+          {/* <EditPop2 /> */}
           {goaldata?.map((dataItem, index) => {
             if (dataItem.status === "complete") {
               return (
@@ -175,6 +185,8 @@ export default function Goal({ userid }) {
                   userid={userid}
                   setGoalData={setGoalData}
                   dataItem={dataItem}
+                  editdisplay={editdisplay}
+                  setEditDisplay={setEditDisplay}
                 />
               );
             }

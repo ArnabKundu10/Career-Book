@@ -14,7 +14,7 @@ const SelectListHook = () => {
   const [statusBg, setStatusBg] = useState(0);
   const [goaldata, setGoalData] = useState([]);
   const [status, setStatus] = useState(true);
-
+  const [editdisplay, setEditDisplay] = useState(-1);
   return {
     setListNum,
     listnum,
@@ -28,6 +28,8 @@ const SelectListHook = () => {
     setGoalData,
     status,
     setStatus,
+    editdisplay,
+    setEditDisplay,
   };
 };
 export { SelectListHook };
