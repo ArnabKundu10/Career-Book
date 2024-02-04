@@ -18,6 +18,7 @@ export default function ToDo({
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            credentials: "include",
           },
           body: JSON.stringify({ i: index, mainid: userid }),
         }
@@ -43,6 +44,7 @@ export default function ToDo({
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            credentials: "include",
           },
           body: JSON.stringify({ i: index, mainid: userid }),
         }

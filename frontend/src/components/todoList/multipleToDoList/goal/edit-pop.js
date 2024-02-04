@@ -37,6 +37,7 @@ export default function EditPop1({
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            credentials: "include",
           },
           body: JSON.stringify(editgoaldata),
         }

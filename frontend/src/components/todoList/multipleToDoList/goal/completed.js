@@ -17,6 +17,7 @@ export default function Completed({
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            credentials: "include",
           },
           body: JSON.stringify({ i: index, mainid: userid }),
         }
@@ -42,6 +43,7 @@ export default function Completed({
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            credentials: "include",
           },
           body: JSON.stringify({ i: index, mainid: userid }),
         }
