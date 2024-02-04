@@ -84,6 +84,7 @@ export default function RegisterLogin({ forSetToken, forSetUserid }) {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            credentials: "include",
             // Additional headers if needed
           },
           body: JSON.stringify(logindata),
