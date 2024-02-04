@@ -6,7 +6,7 @@ const mainRouter = require("./src/route/auth-route");
 connectDB();
 const PORT = process.env.PORT || 5500;
 const corsOptions = {
-  origin: "https://career-book-nnq6.vercel.app",
+  origin: "https://career-book-arnabkundu10s-projects.vercel.app",
   methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
   credentials: true,
 };
