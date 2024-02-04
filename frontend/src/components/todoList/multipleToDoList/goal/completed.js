@@ -12,7 +12,7 @@ export default function Completed({
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://career-book-ys4l.vercel.app/complete",
+        "https://career-book-nnq6.vercel.app/complete",
         {
           method: "POST",
           headers: {
@@ -37,7 +37,7 @@ export default function Completed({
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://career-book-ys4l.vercel.app/deletetask",
+        "https://career-book-nnq6.vercel.app/deletetask",
         {
           method: "POST",
           headers: {

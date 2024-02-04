@@ -32,7 +32,7 @@ export default function EditPop1({
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://career-book-ys4l.vercel.app/todoedit",
+        "https://career-book-nnq6.vercel.app/todoedit",
         {
           method: "POST",
           headers: {

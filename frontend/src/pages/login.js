@@ -25,7 +25,7 @@ export default function RegisterLogin({ forSetToken, forSetUserid }) {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://career-book-ys4l.vercel.app/register",
+        "https://career-book-nnq6.vercel.app/register",
         {
           method: "POST",
           headers: {
@@ -79,7 +79,7 @@ export default function RegisterLogin({ forSetToken, forSetUserid }) {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://career-book-ys4l.vercel.app/login",
+        "https://career-book-nnq6.vercel.app/login",
         {
           method: "POST",
           headers: {
