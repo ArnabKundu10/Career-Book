@@ -24,13 +24,16 @@ export default function RegisterLogin({ forSetToken, forSetUserid }) {
   const handleSubmitOne = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5500/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(registerdata),
-      });
+      const response = await fetch(
+        "https://career-book-ys4l.vercel.app/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(registerdata),
+        }
+      );
       console.log("response data : ", response);
       if (response.ok) {
         if (response.status === 201) {
@@ -75,14 +78,17 @@ export default function RegisterLogin({ forSetToken, forSetUserid }) {
   const handleSubmitTwo = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5500/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          // Additional headers if needed
-        },
-        body: JSON.stringify(logindata),
-      });
+      const response = await fetch(
+        "https://career-book-ys4l.vercel.app/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            // Additional headers if needed
+          },
+          body: JSON.stringify(logindata),
+        }
+      );
       // console.log("response data : ", response);
       if (response.ok) {
         const responseData = await response.json();

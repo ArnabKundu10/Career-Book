@@ -31,13 +31,16 @@ export default function EditPop1({
   const handleEdit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5500/todoedit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(editgoaldata),
-      });
+      const response = await fetch(
+        "https://career-book-ys4l.vercel.app/todoedit",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(editgoaldata),
+        }
+      );
       console.log("response data : ", response);
       if (response.ok) {
         const responseData = await response.json();

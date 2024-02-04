@@ -11,13 +11,16 @@ export default function Completed({
   const complete = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5500/complete", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ i: index, mainid: userid }),
-      });
+      const response = await fetch(
+        "https://career-book-ys4l.vercel.app/complete",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ i: index, mainid: userid }),
+        }
+      );
       console.log("incomplete button response data : ", response);
       if (response.ok) {
         const responseData = await response.json();
@@ -33,13 +36,16 @@ export default function Completed({
   const deleteBtn = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5500/deletetask", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ i: index, mainid: userid }),
-      });
+      const response = await fetch(
+        "https://career-book-ys4l.vercel.app/deletetask",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ i: index, mainid: userid }),
+        }
+      );
       console.log("incomplete button response data : ", response);
       if (response.ok) {
         const responseData = await response.json();

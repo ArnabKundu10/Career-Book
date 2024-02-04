@@ -34,7 +34,7 @@ export default function Goal({ userid }) {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5500/goaldata/${userid}`
+          `https://career-book-ys4l.vercel.app/goaldata/${userid}`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -66,7 +66,7 @@ export default function Goal({ userid }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5500/todo", {
+      const response = await fetch("https://career-book-ys4l.vercel.app/todo", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
