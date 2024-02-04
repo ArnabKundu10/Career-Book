@@ -1,11 +1,11 @@
 // home page
 const bcryptjs = require("bcryptjs");
-const jwt = require("jsonwebtoken");
+// const jwt = require("jsonwebtoken");
 const DreamCollection = require("../model/scema");
-let my_id = "null";
+// let my_id = "null";
 const home = async (req, res) => {
   try {
-    res.send("i am home page");
+    res.status(201).json("i am home page");
   } catch (error) {
     res.send({ msg: "there is an error" });
   }
