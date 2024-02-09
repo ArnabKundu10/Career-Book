@@ -78,3 +78,21 @@
    left: 8%;
    box-shadow: 10px 10px 10px;
 }
+
+/* responsiveness**************************************** */
+@media screen and (max-width:770px) {
+   .goal-input{
+      top: 142px;
+      width: 100%;
+   }   
+   .todo-buttons{
+      width: 50%;
+      flex-direction: column;
+   }
+   .goal-todo-title,.goal-complete-title{
+      width: auto;
+   }
+   .todo-button{
+      height: auto;
+   }
+}

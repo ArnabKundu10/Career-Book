@@ -3,5 +3,12 @@
    position: relative;
    left: 22%;
    text-align: center;
-   top: 50vh;
+   top: 380px;
+}
+@media screen and (max-width:770px){
+   .mainList{
+      width: 100%;
+      left: 0%;
+      top: 430px;
+   }
 }

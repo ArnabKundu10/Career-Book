@@ -1,13 +1,18 @@
 .register-login{
    position: relative;
    height: 110vh;
+   flex-direction: row;
    background:linear-gradient(to right top,rgb(31, 182, 242,1),rgb(31, 182, 242,1),rgb(31, 182, 242,1),white,rgb(31, 182, 242,1),rgb(31, 182, 242,1),rgb(31, 182, 242,1));
-   /*  */
+   justify-content: space-around;
+   align-items: center;
+   overflow-x: hidden;
+   /* justify-content-around align-items-center */
    
 }
 .register{
    z-index: 3;
    box-shadow: 5px 5px 5px;
+   width: 33%;
    background:linear-gradient(to right top,rgb(31, 182, 242,0.4),white,rgb(31, 182, 242,0.4));
 }
 .overlay{
@@ -26,3 +31,21 @@
    top: 0;
    bottom: 0;
 } 
+/* responsiveness*********************************************** */
+
+@media screen and (max-width:770px){
+   .register-login{
+      padding-top: 80px;
+      height: 1600px;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 100px;
+   }
+   .register{
+      width: 95%;
+   }
+   .notebook-bg-img{
+      height: 1600px;
+   }
+}

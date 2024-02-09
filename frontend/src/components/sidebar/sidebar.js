@@ -15,7 +15,7 @@ export default function SideBar({ setListNum }) {
     }
     return {
       ...defaultStyles,
-      backgroundColor: "transparent",
+      backgroundColor: "white",
     };
   };
   return (

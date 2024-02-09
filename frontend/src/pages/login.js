@@ -118,12 +118,18 @@ export default function RegisterLogin({ forSetToken, forSetUserid }) {
   return (
     <>
       <NavBar />
-      <div className="register-login d-flex flex-row justify-content-around align-items-center">
+      <div className="register-login d-flex ">
         <div className="note-bg position-absolute">
           <img className="notebook-bg-img w-100%" src={NoteBookBg} alt="" />
         </div>
-        <div className="register w-25 border border-3 border-opacity-50 border-primary p-5">
-          <p className="text-center fw-bolder fw-2">Registration</p>
+        <div
+          id="register"
+          className="register border border-3 border-opacity-50 border-primary p-5"
+        >
+          <p className="text-center   fw-bolder fs-2">
+            Don't have an <span className="text-primary">Account</span> ?
+          </p>
+          <p className="text-center fw-bolder fs-4">Sign Up</p>
           <form onSubmit={handleSubmitOne}>
             <label htmlFor="register-label">FullName</label>
             <input
@@ -167,8 +173,11 @@ export default function RegisterLogin({ forSetToken, forSetUserid }) {
           </form>
         </div>
         {/* *********************************************************log in */}
-        <div className="register w-25 border border-3 border-opacity-50 border-primary p-5">
-          <p className="text-center fw-bolder fw-2">Log In</p>
+        <div className="register border border-3 border-opacity-50 border-primary p-5">
+          <p className="text-center   fw-bolder fs-2">
+            Already have an <span className="text-primary">Account</span> !!
+          </p>
+          <p className="text-center fw-bolder fs-4">Sign In</p>
           <form onSubmit={handleSubmitTwo}>
             <label htmlFor="register-label">Email</label>
             <input
@@ -187,9 +196,14 @@ export default function RegisterLogin({ forSetToken, forSetUserid }) {
               value={logindata.password}
               name="password"
             />
-            <button className="btn btn-primary" type="submit">
-              submit
-            </button>
+            <div className="text-center">
+              <button className="btn btn-primary" type="submit">
+                submit
+              </button>
+            </div>
+            <p className="text-center fw-bolder">
+              Create an Account? <a href="#register">sign up</a>
+            </p>
           </form>
         </div>
       </div>

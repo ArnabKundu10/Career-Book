@@ -74,7 +74,7 @@ export default function ToDo({
         setEditDisplay={setEditDisplay}
       />
       <div className="d-flex flex-column mt-4 me-0">
-        <div className="d-flex flex-row">
+        <div className="d-flex flex-row justify-content-between">
           <div className="goal-todo-title rounded p-2 text-white fw-bolder fs-2">
             {dataItem.title}
           </div>
